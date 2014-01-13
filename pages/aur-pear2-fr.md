@@ -35,7 +35,7 @@ Installed packages, channel pecl.php.net:
 
 J'ai commencé par créer des paquets pour les canaux comme pour les modules.
 
-Pour installer un canal, tris éléments sont nécessaires :
+Pour installer un canal, trois éléments sont nécessaires :
 
 * Le répertoire du canal stocké dans /usr/share/pear/.registry
 * Le fichier d'enregistrement du canal stocké dans /usr/share/pear/.channels

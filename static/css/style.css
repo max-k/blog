@@ -1,8 +1,8 @@
 body
 {
   font-family: 'Comfortaa', sans-serif;
-  background-color: #F0F0F0;
-  color: #FFFFFF;
+  background-color: #F2F2F6;
+  color: #000033;
 }
 
 h1
@@ -12,7 +12,7 @@ h1
 
 h1 a
 {
-  color: #808080;
+  color: #000033;
   font-size: 38px;
   text-decoration: none;
 }
@@ -33,13 +33,19 @@ h1 a
   margin: 2px auto;
   padding: 10px;
   border-radius: 10px;
-  background-color: #303030;
+  background-color: #F9F9F9;
 }
 
 .content a
 {
-  color: #A0A0A0;
+  color: #000033;
   text-decoration: none;
+}
+
+.content a:hover
+{
+  font-style: bold;
+  text-decoration: underline;
 }
 
 .codehilite
