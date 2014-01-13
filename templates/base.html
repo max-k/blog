@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ config['SITE_TITLE'] }}</title>
+    <link href="{{ url_for('static', filename='css/fonts.css') }}"
+          rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/style.css') }}"
+          rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('pygments') }}" rel="stylesheet" type="text/css" />
+{% for lang in config['AVAILABLE_LANGUAGES'] %}
+    <link href="{{ url_for('feed', lang=lang) }}"
+      rel="alternate"
+      title="{{ config['LOCALIZED_FEED_TITLES'][lang] }}"
+      type="application/atom+xml">
+{% endfor %}
+</head>
+<body>
+    <h1><a href="{{ url_for('index') }}">{{ config['SITE_TITLE'] }}</a></h1>
+<!-- menu -->
+{% block content %}
+    <p>Default content to be displayed</p>
+{% endblock content %}
+</body>
+</html>
