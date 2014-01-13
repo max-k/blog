@@ -49,7 +49,7 @@ def feed(lang):
 
 @app.route('/static/css/pygments.css')
 def pygments():
-    return(pygments_style_defs('default'), 200, {'Content-Type': 'text/css'})
+    return(pygments_style_defs('monokai'), 200, {'Content-Type': 'text/css'})
 
 @app.route('/robots.txt')
 def robots():

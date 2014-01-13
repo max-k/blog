@@ -1,11 +1,55 @@
+body
+{
+  font-family: 'Comfortaa', sans-serif;
+  background-color: #F0F0F0;
+  color: #FFFFFF;
+}
 
 h1
 {
   font-family: 'Comfortaa-Bold', sans-serif;
 }
 
-body
+h1 a
 {
-  font-family: 'Comfortaa', sans-serif;
+  color: #808080;
+  font-size: 38px;
+  text-decoration: none;
+}
+
+.header
+{
+  width: 800px;
+  align: center;
+  margin: 2px auto;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.content
+{
+  width: 800px;
+  align: center;
+  margin: 2px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #303030;
+}
+
+.content a
+{
+  color: #A0A0A0;
+  text-decoration: none;
+}
+
+.codehilite
+{
+  padding: 1px 10px;
+  border-radius: 8px;
+}
+
+h2 a
+{
+  font-size: 28px;
 }
 
