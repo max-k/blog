@@ -9,6 +9,7 @@ class Config(object):
     FLATPAGES_MARKDOWN_EXTENSIONS = ['codehilite', 'extra', 'toc']
     FLATPAGES_AUTO_RELOAD = True
     FREEZER_REMOVE_EXTRA_FILES = True
+    PYGMENTS_THEME = 'monokai'
     AVAILABLE_LANGUAGES = ["en", "fr"]
     FEED_SIZE_LIMIT = 15
     LOCALIZED_FEED_TITLES = {"en": "Most recent articles [en]",
