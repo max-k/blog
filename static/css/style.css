@@ -2,7 +2,7 @@ body
 {
   font-family: 'Comfortaa', sans-serif;
   background-color: #F2F2F6;
-  color: #000033;
+  color: #000022;
 }
 
 h1
@@ -10,17 +10,31 @@ h1
   font-family: 'Comfortaa-Bold', sans-serif;
 }
 
+a
+{
+  color: #333388;
+  text-decoration: none;
+}
+
+a:hover
+{
+  text-decoration: underline;
+}
+
 h1 a
 {
-  color: #000033;
+  color: #222277;
   font-size: 38px;
-  text-decoration: none;
+}
+
+h2 a
+{
+  font-size: 28px;
 }
 
 .header
 {
   width: 800px;
-  align: center;
   margin: 2px auto;
   padding: 2px;
   border-radius: 10px;
@@ -29,33 +43,15 @@ h1 a
 .content
 {
   width: 800px;
-  align: center;
-  margin: 2px auto;
+  margin: auto;
   padding: 10px;
   border-radius: 10px;
   background-color: #F9F9F9;
-}
-
-.content a
-{
-  color: #000033;
-  text-decoration: none;
-}
-
-.content a:hover
-{
-  font-style: bold;
-  text-decoration: underline;
 }
 
 .codehilite
 {
   padding: 1px 10px;
   border-radius: 8px;
-}
-
-h2 a
-{
-  font-size: 28px;
 }
 

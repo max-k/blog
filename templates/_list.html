@@ -1,16 +1,15 @@
-<ul>
 {% for page in pages %}
-    <h2><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
-        Categorized:
-        <a href="{{ url_for("category", category=page.meta['category']) }}">
-        {{ page.meta['category'] }}</a>
-    {% if page.meta.tags|length %}
-        Tagged:
-        {% for page_tag in page.meta.tags %}
-            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
-        {% endfor %}
-    {% endif %}
-{% else %}
+  <h2><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
+  <p>{{ page.meta.summary }}</p>
+    Categorized:
+    <a href="{{ url_for("category", category=page.meta['category']) }}">
+      {{ page.meta['category'] }}</a>
+  {% if page.meta.tags|length %}
+    Tagged:
+    {% for page_tag in page.meta.tags %}
+      <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+    {% endfor %}
+  {% else %}
     No artcle available
+  {% endif %}
 {% endfor %}
-</ul>
