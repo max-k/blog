@@ -1,5 +1,5 @@
 title: Archlinux PEAR packaging layout 2
-date: 2014-01-05
+date: 2014-01-05 17:00:00
 category: Archlinux
 tags: [archlinux, packaging]
 lang: en
@@ -100,4 +100,4 @@ Here is the result of this packaging session :
 
 * [php-aws-sdk](https://aur.archlinux.org/packages/php-aws-sdk/)
 
-[1]: ./aur-pear.html "aur-pear"
+[1]: ../aur-pear.html "aur-pear"

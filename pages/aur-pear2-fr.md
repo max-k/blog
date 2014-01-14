@@ -1,5 +1,5 @@
 title: Packaging de modules PEAR sous archlinux 2
-date: 2014-01-05
+date: 2014-01-05 17:00:00
 category: Archlinux
 tags: [archlinux, packaging]
 lang: fr
@@ -102,4 +102,4 @@ Voici le résultat de cette session de packaging :
 
 * [php-aws-sdk](https://aur.archlinux.org/packages/php-aws-sdk/)
 
-[1]: ./aur-pear-fr.html "aur-pear"
+[1]: ../aur-pear-fr.html "aur-pear-fr"

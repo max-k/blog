@@ -1,5 +1,5 @@
 title: Packaging de modules PEAR sous archlinux
-date: 2013-12-15
+date: 2013-12-15 21:00:00
 category: Archlinux
 tags: [archlinux, packaging]
 lang: fr

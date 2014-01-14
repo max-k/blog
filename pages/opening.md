@@ -1,5 +1,5 @@
 title: Blog opening
-date: 2013-12-09
+date: 2013-12-09 08:00:00
 category: News
 tags: [pelican, publishing]
 lang: en
