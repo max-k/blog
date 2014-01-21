@@ -16,6 +16,9 @@ def gen_feed(config, pages, lang):
         author = config['DEFAULT_AUTHOR']
         if 'author' in article.meta:
             author = article.meta['author']
+        path = "/%s/%s" % (lang, article.path[:-4])
+        if lang == config['DEFAULT_LANGUAGE']:
+            path = article.path
         feed.add(article.meta['title'], unicode(article.html),
                  content_type='html', author=author,
                  url=make_external(config['FREEZER_BASE_URL'], article.path),

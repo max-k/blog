@@ -1,15 +1,43 @@
+{% set lang = request.path.split("/")[1] %}
+{% if lang not in config['AVAILABLE_LANGUAGES'] %}
+    {% set lang = config['DEFAULT_LANGUAGE'] %}
+{% endif %}
+{% set count = 0 %}
 {% for page in pages %}
-  <h2><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
-  <p>{{ page.meta.summary }}</p>
-    Categorized:
-    <a href="{{ url_for("category", category=page.meta['category']) }}">
-      {{ page.meta['category'] }}</a>
-  {% if page.meta.tags|length %}
-    Tagged:
-    {% for page_tag in page.meta.tags %}
-      <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
-    {% endfor %}
-  {% else %}
-    No artcle available
-  {% endif %}
+    {% if page.title  %}
+        {% if ( lang == config['DEFAULT_LANGUAGE'] and page.path[-3] != "-" ) or ( lang != config['DEFAULT_LANGUAGE'] and page.path[-2:] == lang ) %}
+        <h2>
+            {% if lang == config['DEFAULT_LANGUAGE'] %}
+            <a href="{{ url_for('page', path=page.path) }}">{{ page.title }}</a>
+            {% else %}
+            <a href="{{ url_for('page', lang=lang, path=page.path[:-3]) }}">{{ page.title }}</a>
+            {% endif %}
+        </h2>
+        <p>{{ page.meta.summary }}</p>
+        <p>Date: {{ page.meta.date }}</p>
+            {% set category = page.meta.get('category', 'Misc') %}
+        Categorized:
+            {% if lang == config['DEFAULT_LANGUAGE'] %}
+        <a href="{{ url_for("category", category=category) }}">{{ category }}</a>
+            {% else %}
+        <a href="{{ url_for("category", lang=lang, category=category) }}">{{ category }}</a>
+            {% endif %}  
+            {% if page.meta.tags|length %}
+        Tagged:
+                {% for page_tag in page.meta.get('tags', []) %}
+                    {% if lang == config['DEFAULT_LANGUAGE'] %}
+        <a href="{{ url_for('tag', tag=page_tag) }}">{{ page_tag }}</a>
+                    {% else %}
+        <a href="{{ url_for('tag', lang=lang, tag=page_tag) }}">{{ page_tag }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% set count = count+1 %}
+            {{ count }}
+        {% endif %}
+    {% endif %}
 {% endfor %}
+{% if count == 0 %}
+        {{ count }}
+        <p>No data available.</p>
+{% endif %}

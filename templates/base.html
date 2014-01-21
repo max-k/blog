@@ -3,27 +3,44 @@
 <head>
     <meta charset="utf-8">
     <title>{{ config['SITE_TITLE'] }}</title>
+    <link href="{{ url_for('static', filename='images/favicon2.png') }}"
+          rel="shortcut icon" type="image/png"/>
     <link href="{{ url_for('static', filename='css/fonts.css') }}"
           rel="stylesheet" type="text/css" />
     <link href="{{ url_for('static', filename='css/style.css') }}"
           rel="stylesheet" type="text/css" />
     <link href="{{ url_for('pygments') }}" rel="stylesheet" type="text/css" />
-{% for lang in config['AVAILABLE_LANGUAGES'] %}
+    {% for lang in config['AVAILABLE_LANGUAGES'] %}
     <link href="{{ url_for('feed', lang=lang) }}"
-      rel="alternate"
-      title="{{ config['LOCALIZED_FEED_TITLES'][lang] }}"
-      type="application/atom+xml">
-{% endfor %}
+          rel="alternate"
+          title="{{ config['LOCALIZED_FEED_TITLES'][lang] }}"
+          type="application/atom+xml">
+    {% endfor %}
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
-<body>
-    <div class="header">
-        <h1><a href="{{ url_for('index') }}">{{ config['SITE_TITLE'] }}</a></h1>
-    </div>
-<!-- menu -->
-<div class="content">
-{% block content %}
-    <p>Default content to be displayed</p>
-{% endblock content %}
-</div>
+{% if not g.location or g.location == config['DEFAULT_LOCATION'] %}
+<body class="{{ config['DEFAULT_LOCATION'] }}">
+{% else %}
+<body class="{{ g.location }}">
+{% endif %}
+    <!-- header -->
+    {% include "header.html" %}
+    <!-- header -->
+    <!-- languages -->
+    {% include "languages.html" %}
+    <!-- languages -->
+    <!-- menu -->
+    {% include "menu.html" %}
+    <!-- menu -->
+    <section class="content">
+        {% block content %}
+        <p>Default content to be displayed</p>
+        {% endblock content %}
+    </section>
+    <!-- footer -->
+    {% include "footer.html" %}
+    <!-- footer -->
 </body>
 </html>

@@ -15,9 +15,9 @@ help:
 	@echo 'Usage :'
 	@echo 'make dev            (re)generate static webpages using dev env'
 	@echo 'make prod           (re)generate static webpages using prod env'
-	@echo 'make test           open developpement html files in xombrero'
+	@echo 'make test           open development html files in xombrero'
 	@echo 'make push           push production html files using rsync'
-	@echo 'make environment    deploy developpement environment'
+	@echo 'make environment    deploy development environment'
 
 serve:
 	. env/bin/activate; \

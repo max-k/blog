@@ -1,6 +1,7 @@
 body
 {
   font-family: 'Comfortaa', sans-serif;
+  font-size: 16px;
   background-color: #F2F2F6;
   color: #000022;
 }
@@ -25,11 +26,38 @@ h1 a
 {
   color: #222277;
   font-size: 38px;
+  text-decoration: underline;
 }
 
 h2 a
 {
-  font-size: 28px;
+  font-size: 24px;
+}
+
+li
+{
+  list-style-type: none;
+}
+
+li:hover,
+body.blog li.blog,
+body.portfolio li.portfolio,
+ul.Archlinux li.Archlinux,
+ul.News li.News,
+ul.Misc li.Misc
+{
+  list-style-type: disc;
+  color: #333388;
+}
+
+ul
+{
+  padding-left: 0px;
+}
+
+ul ul
+{
+  padding-left: 10px;
 }
 
 .header
@@ -38,6 +66,26 @@ h2 a
   margin: 2px auto;
   padding: 2px;
   border-radius: 10px;
+}
+
+.languages
+{
+  width: 800px;
+  margin: auto;
+  text-align: right;
+}
+
+.languages a:hover
+{
+  text-decoration: none;
+}
+
+.sidebar
+{
+  position: fixed;
+  top: 150px;
+  width: 130px;
+  padding-left: 400px;
 }
 
 .content
@@ -53,5 +101,11 @@ h2 a
 {
   padding: 1px 10px;
   border-radius: 8px;
+}
+
+.footer
+{
+  width: 800px;
+  margin: auto;
 }
 

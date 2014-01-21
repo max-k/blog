@@ -1,0 +1,13 @@
+    <header class="header">
+        {% set lang = request.path.split("/")[1] %}
+        {% if lang not in config['AVAILABLE_LANGUAGES'] %}
+            {% set lang = config['DEFAULT_LANGUAGE'] %}
+        {% endif %}
+        <h1>
+            {% if lang == config['DEFAULT_LANGUAGE'] %}
+                <a href="{{ url_for('index') }}">{{ config['SITE_TITLE'] }}</a>
+            {% else %}
+                <a href="{{ url_for('page', path=lang) }}">{{ config['SITE_TITLE'] }}</a>
+            {% endif %}
+        </h1>
+    </header>

@@ -1,0 +1,24 @@
+    <nav class="languages">
+        {% set endpoint = request.endpoint %}
+        {% for lang in config['AVAILABLE_LANGUAGES'] %}
+            {% set args = request.view_args %}
+            {% do args.update({'lang':lang}) %}
+            {% if lang == config['DEFAULT_LANGUAGE'] %}
+                {% if endpoint == 'page' and args.path in config['AVAILABLE_LANGUAGES'] %}
+                    {% set endpoint = 'index' %}
+                    {% set args = {} %}
+                {% endif %}
+                {% if endpoint == 'index' %}
+                    {% set args = {} %}
+                {% endif %}
+            {% else %}
+                {% if endpoint == 'index' %}
+                    {% set endpoint = 'page' %}
+                    {% set args = {'path':lang} %}
+                {% endif %}
+            {% endif %}
+            <a href="{{ url_for(endpoint, **args) }}">
+                <img src="{{ url_for('static', filename='images/flags/%s.png' % (lang)) }}" alt="{{ lang }}" />
+            </a>
+        {% endfor %}
+    </nav>

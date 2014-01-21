@@ -10,10 +10,13 @@ class Config(object):
     FLATPAGES_AUTO_RELOAD = True
     FREEZER_REMOVE_EXTRA_FILES = True
     PYGMENTS_THEME = 'friendly'
+    DEFAULT_LANGUAGE = "en"
     AVAILABLE_LANGUAGES = ["en", "fr"]
     FEED_SIZE_LIMIT = 15
     LOCALIZED_FEED_TITLES = {"en": "Most recent articles [en]",
                              "fr": u"Articles les plus récents [fr]"}
+    DISPLAYED_CATEGORIES = ['Archlinux', 'News', 'Misc']
+    DEFAULT_LOCATION = 'blog'
 
 class ProductionConfig(Config):
     FREEZER_BASE_URL = 'https://blog.max-k.org/'

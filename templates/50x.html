@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>Internal Server Error</h2>
-  <p>There was an erro while handling your request.</p>
-  <p><a href="{{ url_for('index') }}">Return to the homepage</a></p>
+    {% set lang = request.path.split("/")[1] %}
+    {% if lang not in config['AVAILABLE_LANGUAGES'] %}
+        {% set lang = config['DEFAULT_LANGUAGE'] %}
+    {% endif %}
+    <h2>Internal Server Error</h2>
+    <p>There was an erro while handling your request.</p>
+    <p>
+        {% if lang == config['DEFAULT_LANGUAGE'] %}
+            <a href="{{ url_for('index') }}">Return to the homepage</a>
+        {% else %}
+            <a href="{{ url_for('page', path=lang) }}">Return to the homepage</a>
+        {% endif %}
+    </p>
 {% endblock %}
