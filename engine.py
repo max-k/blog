@@ -34,20 +34,20 @@ default_lang = app.config['DEFAULT_LANGUAGE']
 def index():
     articles = (p for p in pages if 'date' in p.meta)
     latest = sorted(articles, reverse=True, key=lambda p: p.meta['date'])
-    return(render_template('index.html', pages=latest))
+    return(render_template('index.html', pages=latest, nb_pages=len(latest)))
 
 @app.route('/category/<string:category>/', defaults={'lang': default_lang})
 @app.route('/<string:lang>/category/<string:category>/')
 def category(lang, category):
     g.category = category
-    catzed = [p for p in pages if category in p.meta.get('category', 'Misc')]
-    return(render_template('category.html', pages=catzed, category=category))
+    catz = [p for p in pages if category in p.meta.get('category', 'Misc')]
+    return(render_template('category.html', pages=catz, nb_pages=len(catz)))
 
 @app.route('/tag/<string:tag>/', defaults={'lang': default_lang})
 @app.route('/<string:lang>/tag/<string:tag>/')
 def tag(lang, tag):
-    tagged = [p for p in pages if tag in p.meta.get('tags', [])]
-    return(render_template('tag.html', pages=tagged, tag=tag))
+    tagz = [p for p in pages if tag in p.meta.get('tags', [])]
+    return(render_template('tag.html', pages=tagz, nb_pages=len(tagz)))
 
 @app.route('/<path:path>/', defaults={'lang': default_lang})
 @app.route('/<string:lang>/<path:path>/')

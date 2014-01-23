@@ -3,7 +3,9 @@
     {% set lang = config['DEFAULT_LANGUAGE'] %}
 {% endif %}
 {% set count = 0 %}
+{% set pages_count = 0 %}
 {% for page in pages %}
+    {% set pages_count = pages_count+1 %}
     {% if page.title  %}
         {% if ( lang == config['DEFAULT_LANGUAGE'] and page.path[-3] != "-" ) or ( lang != config['DEFAULT_LANGUAGE'] and page.path[-2:] == lang ) %}
         <h2>
@@ -33,11 +35,9 @@
                 {% endfor %}
             {% endif %}
             {% set count = count+1 %}
-            {{ count }}
         {% endif %}
     {% endif %}
-{% endfor %}
-{% if count == 0 %}
-        {{ count }}
+    {% if pages_count == nb_pages and count == 0 %}
         <p>No data available.</p>
-{% endif %}
+    {% endif %}
+{% endfor %}
