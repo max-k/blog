@@ -25,22 +25,16 @@
 {% else %}
 <body class="{{ g.location }}">
 {% endif %}
-    <!-- header -->
-    {% include "header.html" %}
-    <!-- header -->
-    <!-- languages -->
-    {% include "languages.html" %}
-    <!-- languages -->
-    <!-- menu -->
-    {% include "menu.html" %}
-    <!-- menu -->
-    <section class="content">
-        {% block content %}
-        <p>Default content to be displayed</p>
-        {% endblock content %}
-    </section>
-    <!-- footer -->
-    {% include "footer.html" %}
-    <!-- footer -->
+    <div class="page">
+        {% include "header.html" %}
+        {% include "languages.html" %}
+        {% include "menu.html" %}
+        <section class="content">
+            {% block content %}
+            <p>Default content to be displayed</p>
+            {% endblock content %}
+        </section>
+        {% include "footer.html" %}
+    </div>
 </body>
 </html>

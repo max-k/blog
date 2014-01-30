@@ -7,5 +7,6 @@ MarkupSafe==0.18
 PyYAML==3.10
 Pygments==1.6
 Werkzeug==0.9.4
+flask-lesscss==0.9.1
 itsdangerous==0.23
 wsgiref==0.1.2

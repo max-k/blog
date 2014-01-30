@@ -35,12 +35,27 @@ h2 a
   font-size: 24px;
 }
 
+ul
+{
+  padding-left: 15px;
+}
+
+ul ul
+{
+  padding-left: 10px;
+}
+
 li
+{
+  list-style-type: disc;
+}
+
+aside li, nav li
 {
   list-style-type: none;
 }
 
-li:hover,
+nav li:hover,
 body.blog li.blog,
 body.portfolio li.portfolio,
 ul.Archlinux li.Archlinux,
@@ -53,7 +68,7 @@ ul.Misc li.Misc
 
 ul
 {
-  padding-left: 0px;
+  padding-left: 15px;
 }
 
 ul ul
@@ -61,18 +76,21 @@ ul ul
   padding-left: 10px;
 }
 
-.header
+.page
 {
-  width: 800px;
-  margin: 2px auto;
-  padding: 2px;
-  border-radius: 10px;
+  width: 945px;
+  margin: 0 auto;
+}
+
+.header, .languages, .content, .footer
+{
+  width: 784px;
+  margin-left: 145px;
+  padding: 1px 8px;
 }
 
 .languages
 {
-  width: 800px;
-  margin: auto;
   text-align: right;
 }
 
@@ -85,28 +103,32 @@ ul ul
 {
   position: fixed;
   top: 150px;
-  width: 130px;
-  padding-left: 400px;
+  width: 145px;
 }
 
 .content
 {
-  width: 800px;
-  margin: auto;
   padding: 10px;
   border-radius: 10px;
   background-color: #F9F9F9;
 }
 
-.codehilite
+.about, .codehilite
 {
-  padding: 1px 10px;
+  padding: 0px 6px;
   border-radius: 8px;
 }
 
-.footer
+.about
 {
-  width: 800px;
-  margin: auto;
+  float: right;
+  margin-left: 6px;
+  width: 150px;
+  min-height: 150px;
 }
 
+.codehilite
+{
+  padding: 1px 6px;
+  border-radius: 8px;
+}

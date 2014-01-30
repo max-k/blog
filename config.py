@@ -12,6 +12,12 @@ class Config(object):
     PYGMENTS_THEME = 'friendly'
     DEFAULT_LANGUAGE = "en"
     AVAILABLE_LANGUAGES = ["en", "fr"]
+    LOCALES = {"en": 'en_US.UTF-8',
+               "fr": 'fr_FR.UTF-8'}
+    SHORT_DATE_FORMATS = {"en": '%b %d, %y %H:%M',
+                          "fr": '%d %b %y %H:%M'}
+    LONG_DATE_FORMATS = {"en": '%B %d, %Y %H:%M',
+                         "fr": '%d %B %Y %H:%M'}
     FEED_SIZE_LIMIT = 15
     LOCALIZED_FEED_TITLES = {"en": "Most recent articles [en]",
                              "fr": u"Articles les plus récents [fr]"}
@@ -19,7 +25,7 @@ class Config(object):
     DEFAULT_LOCATION = 'blog'
 
 class ProductionConfig(Config):
-    FREEZER_BASE_URL = 'https://blog.max-k.org/'
+    FREEZER_BASE_URL = 'https://blog-dev.max-k.org/'
 
 class DevelopmentConfig(Config):
     DEBUG = True

@@ -4,6 +4,33 @@
         {% set lang = config['DEFAULT_LANGUAGE'] %}
     {% endif %}
     {% block content %}
+    {% if not g.location or g.location == config['DEFAULT_LOCATION'] %}
+    <aside class="about">
+        <ul>
+            <li>{{ page.meta.date|strftime(lang=lang) }}</li>
+            {% if not page.meta['author'] %}
+                {% set author = config['DEFAULT_AUTHOR'] %}
+            {% else %}
+                {% set author = page.meta['author'] %}
+            {% endif %}
+            <li>By {{ author }}</li>
+            {% set category = page.meta.get('category', 'Misc') %}
+            <li>In <a href="{{ url_for("category", category=category) }}">{{ category }}</a></li>
+            {% set tags = page.meta.get('tags', []) %}
+            {% set count = 1 %}
+            <li>tags: 
+            {% for tag in tags %}
+                {% if count < tags|length %}
+                <a href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a>,
+                {% else %}
+                <a href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a>
+                {% endif %}
+                {% set count = count+1 %}
+            {% endfor %}
+            </li>
+        </ul>
+    </aside>
+    {% endif %}
     <h2>
         {% if lang == config['DEFAULT_LANGUAGE'] %}
         <a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>

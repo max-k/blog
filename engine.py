@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os, sys
+import os, sys, locale, datetime
 from collections import OrderedDict
 
 from flask import Flask, render_template, request, send_from_directory, g
@@ -120,9 +120,22 @@ def generic_url_generator():
         for tag in ordered_tags:
             yield 'tag', {'lang': lang, 'tag': tag}
 
+@app.template_filter('strftime')
+def _jinja2_filter_datetime(date, lang=None, fmt="short"):
+    if not lang or lang == '':
+        lang = app.config['DEFAULT_LANGUAGE'][lang]
+    format = app.config['SHORT_DATE_FORMATS'][lang]
+    if fmt == "long":
+        app.config['LONG_DATE_FORMATS'][lang]
+    _locale = locale.getlocale(locale.LC_TIME)
+    locale.setlocale(locale.LC_TIME, app.config['LOCALES'][lang])
+    _strftime = date.strftime(format)
+    locale.setlocale(locale.LC_TIME, _locale)
+    return(_strftime)
+
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(port=8000)
+        app.run(host='0.0.0.0', port=8000)
 
