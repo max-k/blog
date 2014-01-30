@@ -16,7 +16,7 @@
             {% endif %}
         </h2>
         <p>{{ page.meta.summary }}</p>
-        <p>Date: {{ page.meta.date }}</p>
+        <p>Date: {{ page.meta.date|strftime(lang=lang, fmt="long") }}</p>
             {% set category = page.meta.get('category', 'Misc') %}
         Categorized:
             {% if lang == config['DEFAULT_LANGUAGE'] %}

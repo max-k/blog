@@ -129,7 +129,7 @@ def _jinja2_filter_datetime(date, lang=None, fmt="short"):
         lang = app.config['DEFAULT_LANGUAGE'][lang]
     format = app.config['SHORT_DATE_FORMATS'][lang]
     if fmt == "long":
-        app.config['LONG_DATE_FORMATS'][lang]
+        format = app.config['LONG_DATE_FORMATS'][lang]
     _locale = locale.getlocale(locale.LC_TIME)
     locale.setlocale(locale.LC_TIME, app.config['LOCALES'][lang])
     _strftime = date.strftime(format)
