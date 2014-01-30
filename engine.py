@@ -24,6 +24,9 @@ elif app_mode == 'development':
     app.config.from_object('config.DevelopmentConfig')
 
 app.jinja_options['extensions'].append('jinja2.ext.do')
+app.jinja_env.trim_blocks = True
+app.jinja_env.lstrip_blocks = True
+app.jinja_env.keep_trailing_newline = True
 
 pages = FlatPages(app)
 freezer = Freezer(app)
