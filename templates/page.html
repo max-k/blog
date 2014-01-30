@@ -15,18 +15,18 @@
             {% endif %}
             <li>By {{ author }}</li>
             {% set category = page.meta.get('category', 'Misc') %}
-            <li>In <a href="{{ url_for("category", category=category) }}">{{ category }}</a></li>
-            {% set tags = page.meta.get('tags', []) %}
-            {% set count = 1 %}
+            <li>In
+            {% if lang == config['DEFAULT_LANGUAGE'] %}
+                <a href="{{ url_for("category", category=category) }}">{{ category }}</a>
+            {% else %}
+                <a href="{{ url_for("category", lang=lang, category=category) }}">{{ category }}</a>
+            {% endif %}
+            {% if page.meta.tags|length %}
+                {% set tags = page.meta.get('tags', []) %}
+                {% set tag_count = 1 %}
             <li>tags: 
-            {% for tag in tags %}
-                {% if count < tags|length %}
-                <a href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a>,
-                {% else %}
-                <a href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a>
-                {% endif %}
-                {% set count = count+1 %}
-            {% endfor %}
+                {% include "_tags.html" %}
+            {% endif %}
             </li>
         </ul>
     </aside>

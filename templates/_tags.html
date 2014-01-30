@@ -1,0 +1,16 @@
+                {% for tag in tags %}
+                    {% if tag_count < tags|length %}
+                        {% if lang == config['DEFAULT_LANGUAGE'] %}
+                <a href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a>,
+                        {% else %}
+                <a href="{{ url_for('tag', lang=lang, tag=tag) }}">{{ tag }}</a>,
+                        {% endif %}
+                    {% else %}
+                        {% if lang == config['DEFAULT_LANGUAGE'] %}
+                <a href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a>
+                        {% else %}
+                <a href="{{ url_for('tag', lang=lang, tag=tag) }}">{{ tag }}</a>
+                        {% endif %}
+                    {% endif %}
+                    {% set tag_count = tag_count+1 %}
+                {% endfor %}
