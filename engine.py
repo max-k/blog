@@ -134,7 +134,7 @@ def _jinja2_filter_datetime(date, lang=None, fmt="short"):
     locale.setlocale(locale.LC_TIME, app.config['LOCALES'][lang])
     _strftime = date.strftime(format)
     locale.setlocale(locale.LC_TIME, _locale)
-    return(_strftime)
+    return(_strftime.decode('utf-8'))
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
