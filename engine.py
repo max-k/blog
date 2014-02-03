@@ -4,7 +4,7 @@
 import os, sys, locale, datetime
 from collections import OrderedDict
 
-from flask import Flask, render_template, request, send_from_directory, g
+from flask import Flask, Blueprint, render_template, request, send_from_directory, g
 from flask_flatpages import FlatPages, pygments_style_defs
 from flask_frozen import Freezer
 from werkzeug.exceptions import NotFound
@@ -32,6 +32,16 @@ pages = FlatPages(app)
 freezer = Freezer(app)
 
 default_lang = app.config['DEFAULT_LANGUAGE']
+
+#bp = Blueprint('frontend', __name__, url_prefix='/<lang_code>')
+
+#@bp.url_defaults
+#def add_language_code(endpoint, values):
+#    values.setdefault('lang_code', g.lang_code)
+
+#@bp.url_value_preprocessor
+#def pull_lang_code(endpoint, values):
+#    g.lang_code = values.pop('lang_code')
 
 @app.route('/')
 def index():

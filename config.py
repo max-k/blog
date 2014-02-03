@@ -25,7 +25,7 @@ class Config(object):
     DEFAULT_LOCATION = 'blog'
 
 class ProductionConfig(Config):
-    FREEZER_BASE_URL = 'https://blog-dev.max-k.org/'
+    FREEZER_BASE_URL = 'https://blog.max-k.org/'
 
 class DevelopmentConfig(Config):
     DEBUG = True
