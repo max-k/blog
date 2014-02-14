@@ -17,15 +17,15 @@
                 {% else %}
                 <ul class="DefaultCat">
                 {% endif %}
+                    {% for category in config['DISPLAYED_CATEGORIES'] %}
+                    <li class="{{ category }}">
+                        <h3>
+                            <a href="{{ url_for('category', category=category, lang=lang) }}">{{ category }}</a>
+                        </h3>
+                    </li>
+                    {% endfor %}
+                </ul>
             </li>
-                {% for category in config['DISPLAYED_CATEGORIES'] %}
-                <li class="{{ category }}">
-                    <h3>
-                        <a href="{{ url_for('category', category=category, lang=lang) }}">{{ category }}</a>
-                    </h3>
-                </li>
-                {% endfor %}
-            </ul>
             <li class="portfolio">
                 <h2>
                     <a href="{{ url_for('page', lang=lang, path='portfolio') }}">Portfolio</a>
