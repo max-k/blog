@@ -12,12 +12,12 @@
                     <a href="{{ url_for('page', path=lang) }}">Blog</a>
                     {% endif %}
                 </h2>
+                {% if g.category %}
+                <ul class="{{ g.category }}">
+                {% else %}
+                <ul class="DefaultCat">
+                {% endif %}
             </li>
-            {% if g.category %}
-            <ul class="{{ g.category }}">
-            {% else %}
-            <ul class="DefaultCat">
-            {% endif %}
                 {% for category in config['DISPLAYED_CATEGORIES'] %}
                 <li class="{{ category }}">
                     <h3>

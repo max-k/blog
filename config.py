@@ -9,6 +9,7 @@ class Config(object):
     FLATPAGES_MARKDOWN_EXTENSIONS = ['codehilite', 'extra', 'toc']
     FLATPAGES_AUTO_RELOAD = True
     FREEZER_REMOVE_EXTRA_FILES = True
+    FREEZER_IGNORE_404_NOT_FOUND = True
     PYGMENTS_THEME = 'friendly'
     DEFAULT_LANGUAGE = "en"
     AVAILABLE_LANGUAGES = ["en", "fr"]
@@ -21,7 +22,7 @@ class Config(object):
     FEED_SIZE_LIMIT = 15
     LOCALIZED_FEED_TITLES = {"en": "Most recent articles [en]",
                              "fr": u"Articles les plus récents [fr]"}
-    DISPLAYED_CATEGORIES = ['Archlinux', 'News', 'Misc']
+    DISPLAYED_CATEGORIES = ['Archlinux', 'Python', 'News', 'Misc']
     DEFAULT_LOCATION = 'blog'
 
 class ProductionConfig(Config):
