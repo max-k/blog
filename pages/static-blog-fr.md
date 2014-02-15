@@ -1,4 +1,4 @@
-title: Migration to Flask based blog engine
+title: Migration à un moteur de blog basé sur Flask
 date: 2014-02-14 21:55:00
 category: News
 tags: [python, publishing]
