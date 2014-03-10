@@ -68,10 +68,13 @@ That's all folks.
 
 The new engine is very flexible and powerfull and is multilingual.
 
+You can checkout the sources : [here]
+
 [Pelican]: http://blog.getpelican.com/ "Pelican"
 [Flask]: http://flask.pocoo.org/ "Flask"
 [Jinja2]: http://jinja.pocoo.org/docs/ "Jinja2"
 [Frozen-Flask]: http://pythonhosted.org/Frozen-Flask/ "Frozen-Flask"
 [Flask-FlatPages]: http://pythonhosted.org/Flask-FlatPages/ "Flask-FlatPages"
 [Nicolas Perriault's post]: https://nicolas.perriault.net/code/2012/dead-easy-yet-powerful-static-website-generator-with-flask/ "Nicolas Perriault's Blog"
+[here]: https://github.com/max-k/blog "blog on github"
 

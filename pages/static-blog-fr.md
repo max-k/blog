@@ -70,8 +70,9 @@ couverture fonctionnelle.
 
 Voilà tout.
 
-
 Le nouveau moteur est trés flexible et puissant et est multilingue.
+
+Vous pouver accéder aux sources : [ici]
 
 [Pelican]: http://blog.getpelican.com/ "Pelican"
 [Flask]: http://flask.pocoo.org/ "Flask"
@@ -79,4 +80,5 @@ Le nouveau moteur est trés flexible et puissant et est multilingue.
 [Frozen-Flask]: http://pythonhosted.org/Frozen-Flask/ "Frozen-Flask"
 [Flask-FlatPages]: http://pythonhosted.org/Flask-FlatPages/ "Flask-FlatPages"
 [Le post de Nicolas Perriault]: https://nicolas.perriault.net/code/2012/dead-easy-yet-powerful-static-website-generator-with-flask/ "Le blog de Nicolas Perriault"
+[ici]: https://github.com/max-k/blog "blog sur github"
 
