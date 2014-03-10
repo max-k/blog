@@ -53,14 +53,16 @@ def index():
 @app.route('/<string:lang>/category/<string:category>/')
 def category(lang, category):
     g.category = category
-    catz = [p for p in pages if category in p.meta.get('category', 'Misc')]
-    return(render_template('category.html', pages=catz, nb_pages=len(catz)))
+    catz = (p for p in pages if category in p.meta.get('category', 'Misc') and 'date' in p.meta)
+    latest = sorted(catz, reverse=True, key=lambda p: p.meta['date'])
+    return(render_template('category.html', pages=latest, nb_pages=len(latest)))
 
 @app.route('/tag/<string:tag>/', defaults={'lang': default_lang})
 @app.route('/<string:lang>/tag/<string:tag>/')
 def tag(lang, tag):
-    tagz = [p for p in pages if tag in p.meta.get('tags', [])]
-    return(render_template('tag.html', pages=tagz, nb_pages=len(tagz)))
+    tagz = (p for p in pages if tag in p.meta.get('tags', []) and 'date' in p.meta)
+    latest = sorted(tagz, reverse=True, key=lambda p: p.meta['date'])
+    return(render_template('tag.html', pages=latest, nb_pages=len(latest)))
 
 @app.route('/<path:path>/', defaults={'lang': default_lang})
 @app.route('/<string:lang>/<path:path>/')
