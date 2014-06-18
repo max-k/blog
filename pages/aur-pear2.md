@@ -100,4 +100,4 @@ Here is the result of this packaging session :
 
 * [php-aws-sdk](https://aur.archlinux.org/packages/php-aws-sdk/)
 
-[1]: ../aur-pear.html "aur-pear"
+[1]: ../aur-pear "aur-pear"
