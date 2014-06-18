@@ -42,7 +42,7 @@ I occasionally practice martial arts for many years,
 You can contact me by email max-k@post.com.
 If you want hire me, please refer to my résumé.
 
-[pdf format]: static/cv_tsarboni_2013.pdf
+[pdf format]: https://blog.max-k.org/static/cv_tsarboni_2013.pdf
 [contributions page]: ../contributions
 [Python programming language]: http://www.python.org
 [Archlinux distribution]: https://www.archlinux.org
