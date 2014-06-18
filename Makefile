@@ -38,7 +38,7 @@ test: dev
 	xombrero $(OUTPUTDIR)/index.html
 
 push: prod
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete \
+	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --update --delete \
 	$(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
 
 virtualenv:
