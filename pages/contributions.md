@@ -29,13 +29,14 @@ Frozen-Flask is an extension for [Flask] framework.
 
 It allows to freeze [Flask] applications into static html files.
 
-[forzenflask_contribution]
+[frozenflask_contribution]
 
 #### [qtile]
 
 Qtile is an hackable tiling window manager written in Python.
 
 [qtile_contribution]
+[qtile_pullrequests]
 
 [obm-deploy]: https://github.com/linagora/obm-deploy
 [Ansible]: http://www.ansible.com
@@ -48,5 +49,5 @@ Qtile is an hackable tiling window manager written in Python.
 [roundcube_contribution]: https://github.com/roundcube/roundcubemail/commit/7fac4dc87b2507227666db9b74d83090f38d62e7
 [pyqrencode_contribution]: https://github.com/Arachnid/pyqrencode/pull/4
 [frozenflask_contribution]: https://github.com/SimonSapin/Frozen-Flask/commit/e795c1869a70f3d3735b2f2b1d27dbddbac48368
-[qtile_contribution1]: https://github.com/qtile/qtile/commits?author=max-k
+[qtile_contribution]: https://github.com/qtile/qtile/commits?author=max-k
 [qtile_pullrequests]: https://github.com/qtile/qtile/pulls/max-k
