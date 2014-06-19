@@ -37,7 +37,7 @@ J'adore la musique qui groove comme le Jazz, la Funk ou le Blues.
 Je lis beaucoup de romans de science-fiction, particulièrement de type
 space opera ou anticipation.
 
-Occasionellement, depuis plusieurs années, je pratique les arts martiaux
+Occasionnellement, depuis plusieurs années, je pratique les arts martiaux
 (judo, tae-kwon-do, nin-jutsu et boxe anglaise).
 
 ### Me contacter
