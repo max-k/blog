@@ -12,12 +12,12 @@ More than a vocation, this is actually for me an inexhaustible passion,
 a way of life.
 
 I try to contribute to free software community everytime it is possible,
-in all the manner i can. Packaging, documentation, translation, bug tracking,
+in every manner i can. Packaging, documentation, translation, bug tracking,
 bug fixing or code contributions...
 
-### Résumé
+### Resume
 
-My résumé is available here : [pdf format].
+My resume is available here : [pdf format].
 
 ### Open-Source Contributions
 
@@ -28,13 +28,13 @@ A short-listing of my main contributions is available on [contributions page].
 I am particularly interested in [Python programming language] and [Archlinux
 distribution] as you can see in this pages.
 
-### Other center of interest
+### Other centers of interest
 
 I love groovy black music like Jazz Funk or Blues.
 
 I read many science fiction novels especially space-opera and anticipation ones.
 
-I occasionally practice martial arts for many years,
+I have been occasionally practicing martial arts during several years
 (judo, tae-kwon-do, nin-jutsu and english boxing).
 
 ### Contact me
