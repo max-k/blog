@@ -4,8 +4,8 @@ FLASK_MANAGER=engine.py
 BASEDIR=$(CURDIR)
 OUTPUTDIR=$(BASEDIR)/build
 
-SSH_HOST=xen.max-k.org
-SSH_PORT=2222
+SSH_HOST=ssl-offloader.max-k.org
+SSH_PORT=443
 SSH_USER=www-data
 SSH_TARGET_DIR=/srv/http/blog
 
